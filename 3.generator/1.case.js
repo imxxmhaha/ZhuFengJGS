@@ -16,7 +16,8 @@
 // }};
 
 let obj = {0:1,1:2,2:3,length:3,[Symbol.iterator]:function * () {
-        let index = 0;
+    // 每次浏览器都会不听的调用next方法  把yield 的结果作为值
+    let index = 0;
         while(index !== this.length){
             yield this[index++];
         }
